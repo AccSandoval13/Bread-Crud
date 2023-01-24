@@ -26,4 +26,4 @@ function Default(html) {
   
 
 
-module.exports = Default;
+module.Exports = Default;
