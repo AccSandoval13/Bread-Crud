@@ -5,8 +5,7 @@ function New () {
     return (
       <Default>
         <h2>Add a new bread</h2>
-            <div>
-                <a href="/breads"> <button> Go back to the index</button></a>
+        <form action ="/breads" method="POST">
           <label htmlFor="name">Name</label>
           <input
             type="text"
