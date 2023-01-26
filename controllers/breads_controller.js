@@ -4,11 +4,11 @@ const breads = express.Router() // breads passed in server.js
 const Bread = require('../models/bread.js')
 
 
-// INDEX
+// INDEX PAGE 
 breads.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {breads: Bread})
   // res.send(Bread)
-}) // grabbing / from server.js and sending Bread = models/bread.js 
+})
 
 // // CREATE
 // breads.post('/', (req, res) => {
@@ -30,10 +30,8 @@ breads.get('/', (req, res) => {
 
 
 // SHOW  basically a placeholder after the  / breads end 
-breads.get('/:arrayIndexPlaceHolder', (req, res) => {
-
-  console.log(req.params.arrayIndexPlaceHolder)
-  res.send(Bread[req.params.arrayIndexPlaceHolder])
+breads.get('/:arrayIndex', (req, res) => {
+  res.send(Bread[req.params.arrayIndex])
   
 //   const breadIndex = req.params.arrayIndex; 
 //   const currentBread = Bread[breadIndex];

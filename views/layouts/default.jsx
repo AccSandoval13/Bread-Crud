@@ -8,7 +8,7 @@ function Default(html) {
     </head>
     <body>
       <h1>HTML Rendered!</h1>
-      <div className="container">
+      <div className="container"> {/* classNmae is class in React  */}
         {html.children}
       </div>
     </body>
