@@ -4,7 +4,9 @@ function Default(html) {
   return (
     <html>
     <head>
-      <title>Default</title>
+        <title>{html.title || 'Default'}</title>  
+        <link rel="stylesheet" href="/main.css"/>
+
     </head>
     <body>
       <h1>HTML Rendered!</h1>
