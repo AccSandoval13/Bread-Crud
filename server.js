@@ -1,6 +1,7 @@
 // DEPENDENCIES
 const express = require('express')
 const methodOverride = require('method-override')
+const mongoose = require('mongoose')
 
 
 // CONFIGURATION
@@ -33,7 +34,11 @@ res.render('error404')
 })
 
 
-// LISTEN
+// LISTEN FOR SERVER 
 app.listen(PORT, () => {
-  console.log(`listening on http://localhost:${PORT}`)
+  console.log(`Listening on http://localhost:${PORT}`)
 })
+
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true},
+  () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
+)
