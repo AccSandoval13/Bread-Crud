@@ -1,4 +1,4 @@
-// Require Mongoose
+// require mongoose 
 const mongoose = require('mongoose')
 const breads = require('../controllers/breads_controller')
 // creating shorthand for the Schema constructor 
@@ -35,10 +35,7 @@ breadSchema.static('getBreadsByBaker', function(bakerName){
   return this.find({baker: bakerName})
 }) 
 
-
 const Bread = mongoose.model('Bread', breadSchema)
 
-// Bread: The first argument we passed is the name of the collection we want to connect this model to.
-// breadSchema: The second argument we passed is the schema we want our model to use
 
 module.exports = Bread

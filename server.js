@@ -3,25 +3,26 @@ const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
-
 // CONFIGURATION
 require('dotenv').config()
 const PORT = process.env.PORT
-const app = express() // assigning app to hold express 
+const app = express()
 
 
-// MIDDLEWARE 
-app.set('views', __dirname + '/views') // __ dunder-score + directory name of the current module all the way from the root
-app.set('view engine', 'jsx') // setting the view engine to jsx, there are different options out there
-app.engine('jsx', require('express-react-views').createEngine()) // grabbing express-react-views to run that engine 
-app.use(express.static('public')) // setup serving static assets 
-app.use(express.urlencoded({extended: true})) //parse body content that we recieve 
+
+// MIDDLEWARE
+app.set('views', __dirname + '/views') //dunder-score
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public')) // setup serving static assets
+app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
+
 
 // ROUTES
 app.get('/', (req, res) => {
   res.send('Welcome to an Awesome App about Breads!')
-}) // handler root being called /
+})
 
 
 // Breads
